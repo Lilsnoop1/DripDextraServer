@@ -14,7 +14,7 @@ app.use(router);
 app.use(cookieParser());
 
 
-mongoose.connect("mongodb+srv://ammar:ammar@cluster0.vuzjvhx.mongodb.net/productsDB");
+mongoose.connect(process.env.CONNECT);
 
 app.listen(process.env.PORT,()=>{
     console.log("Server Started");
