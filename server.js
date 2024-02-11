@@ -16,6 +16,6 @@ app.use(cookieParser());
 
 mongoose.connect(process.env.CONNECT);
 
-app.listen(process.env.PORT,(req,res)=>{
-    res.send("Server Started")
+app.listen(3000,()=>{
+    console.log("Server Started");
 })
