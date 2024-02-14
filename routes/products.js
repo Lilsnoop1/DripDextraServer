@@ -64,6 +64,7 @@ router.get("/carter",async (req,res)=>{
 router.post("/xyz",async (req,res)=>{
     deviceID = req.body.deviceId;
     console.log(deviceID);
+    res.json({"noerror":"noerror"});
 })
 router.post("/update",async (req,res)=>{
     const {Header,quantity} = req.body
