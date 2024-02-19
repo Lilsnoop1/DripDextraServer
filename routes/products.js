@@ -14,35 +14,35 @@ var deviceID=null;
 router.get("/rings",async (req,res)=>{
     const getAll = await rings.find({});
     res.json(getAll)
-    var Data = await getData("https://www.aliexpress.com/w/wholesale-men's-rings.html?spm=a2g0o.home.history.1.650c76db12TuKl");
-    const deleter = await rings.deleteMany({});
-    Data.forEach((single)=>{
-        single.Type="ring";
-    })
-    const adder = await rings.insertMany(Data);
-    console.log(adder);
+    // var Data = await getData("https://www.aliexpress.com/w/wholesale-men's-rings.html?spm=a2g0o.home.history.1.650c76db12TuKl");
+    // const deleter = await rings.deleteMany({});
+    // Data.forEach((single)=>{
+    //     single.Type="ring";
+    // })
+    // const adder = await rings.insertMany(Data);
+    // console.log(adder);
 })
 router.get("/bracelets",async (req,res)=>{
     const getAll = await bracelets.find({});
     res.json(getAll);
-    const Data = await getData("https://www.aliexpress.com/w/wholesale-men's-bracelets.html?spm=a2g0o.home.history.1.650c76dbhRszbm");
-    const deleter = await bracelets.deleteMany({});
-    Data.forEach((single)=>{
-        single.Type="bracelet";
-    })
-    const adder = await bracelets.insertMany(Data);
-    console.log(adder);
+    // const Data = await getData("https://www.aliexpress.com/w/wholesale-men's-bracelets.html?spm=a2g0o.home.history.1.650c76dbhRszbm");
+    // const deleter = await bracelets.deleteMany({});
+    // Data.forEach((single)=>{
+    //     single.Type="bracelet";
+    // })
+    // const adder = await bracelets.insertMany(Data);
+    // console.log(adder);
 })
 router.get("/watches",async (req,res)=>{
     const getAll = await watches.find({});
     res.json(getAll)
-    const Data = await getData("https://www.aliexpress.com/w/wholesale-men's-watches.html?spm=a2g0o.home.history.1.650c76dbrHo2ML");
-    const deleter = await watches.deleteMany({});
-    Data.forEach((single)=>{
-        single.Type="watch";
-    })
-    const adder = await watches.insertMany(Data);
-    console.log(adder);
+    // const Data = await getData("https://www.aliexpress.com/w/wholesale-men's-watches.html?spm=a2g0o.home.history.1.650c76dbrHo2ML");
+    // const deleter = await watches.deleteMany({});
+    // Data.forEach((single)=>{
+    //     single.Type="watch";
+    // })
+    // const adder = await watches.insertMany(Data);
+    // console.log(adder);
 })
 router.post("/cart",async (req,res)=>{
     var dataaChecker = false;

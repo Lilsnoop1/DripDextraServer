@@ -59,10 +59,17 @@ export default async function getData (source){
         })
         title.forEach((price)=>{
            var priceting = price.querySelector(".multi--price--1okBCly .multi--price-sale--U-S0jtj :nth-child(2)").innerText;
-            if(parseInt(priceting)===0){
-                priceting = 1;
-            }
-            pricearr.push(parseInt(priceting)*279.65);
+           var pricetingTwo = price.querySelector(".multi--price--1okBCly .multi--price-sale--U-S0jtj :nth-child(3)").innerText;
+           var pricetingThree = price.querySelector(".multi--price--1okBCly .multi--price-sale--U-S0jtj :nth-child(4)").innerText;
+           var configPrice = priceting + pricetingTwo + pricetingThree;
+           var finalPrice = '';
+           if(configPrice.includes(".")){
+                finalPrice = parseInt(configPrice.split(".")[0]);
+           }else if(configPrice.includes(",")){
+                finalPrice = parseInt(configPrice.replace(",",""));
+           }
+           pricearr.push(finalPrice);
+
         })
         for(let x = 0;x<counter;x++){
             objectJson.push({"imgurl":imgurlarr[x],"Title":titlearr[x],"Price":pricearr[x],"id":counter,"Type":""});
