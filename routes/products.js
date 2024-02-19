@@ -14,23 +14,35 @@ var deviceID=null;
 router.get("/rings",async (req,res)=>{
     const getAll = await rings.find({});
     res.json(getAll)
-    const Data = await getData("https://www.aliexpress.com/w/wholesale-rings-for-men.html?spm=a2g0o.home.search.0");
-    const deleter = await rings.deleteMany({});
-    const adder = await rings.insertMany(Data);
+    // var Data = await getData("https://www.aliexpress.com/w/wholesale-men-ring.html?spm=a2g0o.productlist.search.0");
+    // // const deleter = await rings.deleteMany({});
+    // Data.forEach((single)=>{
+    //     single.Type="ring";
+    // })
+    // const adder = await rings.insertMany(Data);
+    // console.log(adder);
 })
 router.get("/bracelets",async (req,res)=>{
     const getAll = await bracelets.find({});
     res.json(getAll);
-    const Data = await getData("https://www.aliexpress.com/w/wholesale-men's-bracelet.html?spm=a2g0o.detail.history.1.9d65ARKVARKVmI");
-    const deleter = await bracelets.deleteMany({});
-    const adder = await bracelets.insertMany(Data);
+    // const Data = await getData("https://www.aliexpress.com/w/wholesale-men's-bracelet.html?spm=a2g0o.detail.history.1.9d65ARKVARKVmI");
+    // // const deleter = await bracelets.deleteMany({});
+    // Data.forEach((single)=>{
+    //     single.Type="bracelet";
+    // })
+    // const adder = await bracelets.insertMany(Data);
+    // console.log(adder);
 })
 router.get("/watches",async (req,res)=>{
     const getAll = await watches.find({});
     res.json(getAll)
-    const Data = await getData("https://www.aliexpress.com/w/wholesale-men's-watches.html?page=3&g=y&SearchText=men%27s+watches&sortType=price_asc");
-    const deleter = await watches.deleteMany({});
-    const adder = await watches.insertMany(Data);
+    // const Data = await getData("https://www.aliexpress.com/w/wholesale-men's-watches.html?page=3&g=y&SearchText=men%27s+watches&sortType=price_asc");
+    // // const deleter = await watches.deleteMany({});
+    // Data.forEach((single)=>{
+    //     single.Type="watch";
+    // })
+    // const adder = await watches.insertMany(Data);
+    // console.log(adder);
 })
 router.post("/cart",async (req,res)=>{
     var dataaChecker = false;

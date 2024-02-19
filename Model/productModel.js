@@ -4,7 +4,8 @@ const productSchema = new mongoose.Schema({
     imgurl: String,
     Title: String,
     Price: String,
-    id: Number
+    id: Number,
+    Type:String
 })
 
 const rings = new mongoose.model("Ring",productSchema);

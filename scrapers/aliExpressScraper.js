@@ -1,7 +1,14 @@
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-extra";
+import StealthPlugin from "puppeteer-extra-plugin-stealth"
 
+
+puppeteer.use(StealthPlugin());
+
+import { executablePath } from "puppeteer";
 export default async function getData (source){
-    const browser = await puppeteer.launch({headless:true});
+    try{
+
+    const browser = await puppeteer.launch({headless:true, executablePath:executablePath()});
     const page = await browser.newPage();
     page.setDefaultNavigationTimeout(0);
     await page.goto(source,{waitUntil:"load"});
@@ -58,10 +65,12 @@ export default async function getData (source){
             pricearr.push(parseInt(priceting)*279.65);
         })
         for(let x = 0;x<counter;x++){
-            objectJson.push({"imgurl":imgurlarr[x],"Title":titlearr[x],"Price":pricearr[x],"id":counter});
+            objectJson.push({"imgurl":imgurlarr[x],"Title":titlearr[x],"Price":pricearr[x],"id":counter,"Type":""});
         }
-
         return objectJson; 
     });
     return grabTitle;
+    }catch(error){
+        console.log(error);
+    }
 };
